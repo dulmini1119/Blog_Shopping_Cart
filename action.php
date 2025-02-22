@@ -47,8 +47,8 @@ if (isset($_GET['cartItem']) && isset($_GET['cartItem']) == 'cart_item') {
     echo $rows;
 }
 
-if (isset($_GET["remove"])) {
-    $id = $_GET['remove'];
+if (isset($_GET["remove_cart"])) {
+    $id = $_GET['remove_cart'];
 
     $stmt = $conn->prepare("DELETE FROM cart where id=?");
     $stmt->bind_param("i", $id);
@@ -69,7 +69,7 @@ if (isset($_GET['clear'])) {
 
 }
 
-if (isset($_POST['qty'])) {
+if (isset($_POST['qty'], $_POST['pid'], $_POST['pprice'])) {
     $qty = $_POST['qty'];
     $pid = $_POST['pid'];
     $pprice = $_POST['pprice'];
@@ -80,8 +80,8 @@ if (isset($_POST['qty'])) {
     $stmt->bind_param("isi", $qty, $tprice, $pid);
     $stmt->execute();
 }
-if (isset($_GET["remove"])) {
-    $id = $_GET['remove'];
+if (isset($_GET["remove_product"])) {
+    $id = $_GET['remove_product'];
 
     $stmt = $conn->prepare("DELETE FROM products where id=?");
     $stmt->bind_param("i", $id);

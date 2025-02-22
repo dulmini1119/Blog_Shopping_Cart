@@ -114,7 +114,7 @@ session_start();
                 <tr>
                   <td><?= $row['id'] ?></td>
                   <input type="hidden" class="pid" value="<?= $row['id'] ?>">
-                  <td><img src="<?= $row['product_image'] ?>" width="50"></td>
+                  <td><img src="images/<?= $row['product_image'] ?>" width="50"></td>
                   <td><?= $row['product_name'] ?></td>
                   <td>Rs. <?= number_format($row['product_price'], 2) ?></td>
 
@@ -124,7 +124,7 @@ session_start();
 
                   <td>Rs. <?= number_format($row['total_price'], 2) ?></td>
                   <td>
-                    <a href="action.php?remove=<?= $row['id'] ?>" class="text-danger lead"
+                    <a href="action.php?remove_cart=<?= $row['id'] ?>" class="text-danger lead"
                       onclick="return confirm('Are you sure you want to remove this Item?');"><i
                         class="fas fa-trash-alt"></i></a>
                   </td>
@@ -156,7 +156,7 @@ session_start();
 
   <script type="text/javascript">
     $(document).ready(function () {
-      $("*.itemQty").on('change', function () {
+      $(".itemQty").on('change', function () {
         var $el = $(this).closest('tr');
 
         var pid = $el.find(".pid").val();
@@ -164,7 +164,7 @@ session_start();
         var qty = $el.find(".itemQty").val();
 
         $.ajax({
-          url: 'acion.php',
+          url: 'action.php',
           method: 'post',
           cache: false,
           data: { qty: qty, pid: pid, pprice: pprice },

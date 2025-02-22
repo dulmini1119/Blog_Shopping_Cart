@@ -76,7 +76,7 @@ session_start();
         <div class="col">
           <div class="card h-100 border rounded-4 shadow-sm overflow-hidden product-card">
             <div class="ratio ratio-1x1 image-container">
-              <img src="<?= $row['product_image'] ?>" class="product-image" alt="Product Image">
+              <img src="images/<?= $row['product_image'] ?>" class="product-image" alt="Product Image">
             </div>
             <div class="card-body text-center d-flex flex-column justify-content-between p-4">
               <h5 class="card-title mb-1"><?= $row['product_name'] ?></h5>

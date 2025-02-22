@@ -102,7 +102,7 @@ session_start();
                 ?>
                 <tr>
                   <td><?php echo $num ?></td>
-                  <td><img src="<?php echo $row['product_image']; ?>" alt="<?php echo $row['product_name']; ?>"
+                  <td><img src="images/<?php echo $row['product_image']; ?>" alt="<?php echo $row['product_name']; ?>"
                       class="img-thumbnail" style="width: 70px; height: 70px; object-fit: cover;"></td>
 
                   <td><?php echo $row['product_name'] ?></td>
@@ -110,7 +110,7 @@ session_start();
                   <td><?php echo $row['product_code'] ?></td>
                   <td><?php echo $row['product_qty'] ?></td>
                   <td>
-                    <a href="action.php?remove=<?= $row['id'] ?>" class="btn btn-outline-danger btn-sm"
+                    <a href="action.php?remove_product=<?= $row['id'] ?>" class="btn btn-outline-danger btn-sm"
                       onclick="return confirm('Are you sure you want to delete this Item?');"><i
                         class="fas fa-trash"></i></a>
                     <a href="editproduct.php?id=<?php echo $row['id']; ?>" class="btn btn-outline-primary btn-sm"><i

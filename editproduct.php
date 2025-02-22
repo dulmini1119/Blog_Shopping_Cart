@@ -16,6 +16,8 @@ if (isset($_POST['update_product'])) {
     $id = $_POST['id'];
     $product_name = $_POST['product_name'];
     $product_price = $_POST['product_price'];
+    $product_code = $_POST['product_code'];
+    $product_qty = $_POST['product_qty'];
 
 
     if (!empty($_FILES['product_image']['name'])) {
@@ -28,8 +30,8 @@ if (isset($_POST['update_product'])) {
         $product_image = $_POST['old_image'];
     }
 
-    $stmt = $conn->prepare("UPDATE products SET product_name=?, product_price=?, product_image=? WHERE id=?");
-    $stmt->bind_param("sssi", $product_name, $product_price, $product_image, $id);
+    $stmt = $conn->prepare("UPDATE products SET product_name=?, product_price=?, product_image=?, product_code=?, product_qty=? WHERE id=?");
+    $stmt->bind_param("ssssii", $product_name, $product_price, $product_image ,$product_code, $product_qty, $id);
 
     if ($stmt->execute()) {
         $_SESSION['showAlert'] = 'block';
@@ -72,7 +74,7 @@ if (isset($_POST['update_product'])) {
             <div class="mb-3">
                 <label class="form-label">Product Image</label>
                 <input type="file" class="form-control" name="product_image">
-                <img src="<?= $product['product_image'] ?>" alt="Product Image" width="100" class="mt-2">
+                <img src="images/<?= $product['product_image'] ?>" alt="Product Image" width="100" class="mt-2">
             </div>
 
             <div class="mb-3">
