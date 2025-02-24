@@ -19,5 +19,5 @@ A **PHP-based Blog & Shopping Cart System** that allows users to browse products
 
 ### 1️⃣ **Clone the Repository**
 ```sh
-git clone https://github.com/YOUR_GITHUB_USERNAME/blog-shopping-cart.git
-cd blog-shopping-cart
+git clone 'https://github.com/dulmini1119/Blog_Shopping_Cart.git'
+
